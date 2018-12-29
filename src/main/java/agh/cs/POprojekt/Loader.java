@@ -28,7 +28,7 @@ import static java.lang.Integer.parseInt;
 
 public class Loader {
     private Gson gson;
-    private DateFormat df = new SimpleDateFormat("yyyy-mm-dd");
+    private DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
 
     public Loader() {
         GsonBuilder gsonBuilder = new GsonBuilder();

@@ -67,6 +67,10 @@ public class Judgment {
         return textContent;
     }
 
+    public Date getJudgmentDate() {
+        return judgmentDate;
+    }
+
     @Override
     public String toString() {
         return "Judgment{\n" +

@@ -8,7 +8,6 @@ import org.jline.terminal.Terminal;
 import org.jline.terminal.TerminalBuilder;
 
 import java.io.*;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -21,7 +20,7 @@ public class Main {
         commandMap.put("content", new Content());
         commandMap.put("judge", new JudgeCommand());
         commandMap.put("judges", new Judges());
-        commandMap.put("months", new Help());
+        commandMap.put("months", new MonthsCommand());
         commandMap.put("courts", new Courts());
         commandMap.put("regulations", new Regulations());
         commandMap.put("jury", new Jury());
@@ -32,7 +31,8 @@ public class Main {
             PrintWriter writer = terminal.writer();
 
             File file;
-            if(args.length < 1) file = new File(reader.readLine("Input folder: " + System.getProperty("user.dir") + "/"));
+            if (args.length < 1)
+                file = new File(reader.readLine("Input folder: " + System.getProperty("user.dir") + "/"));
             else file = new File(args[0]);
 
             while (!file.isDirectory()) {
@@ -43,7 +43,8 @@ public class Main {
             List<Judgment> judgments = new Loader().load(file);
 
             File logFile;
-            if (args.length < 2) logFile = new File(reader.readLine("Save file location: " + System.getProperty("user.dir") + "/"));
+            if (args.length < 2)
+                logFile = new File(reader.readLine("Save file location: " + System.getProperty("user.dir") + "/"));
             else logFile = new File(args[1]);
 
             PrintWriter logWriter = new PrintWriter(new BufferedWriter(new FileWriter(logFile)));
@@ -60,6 +61,7 @@ public class Main {
                 if (commandStr.length < 2) result = command.run("", judgments);
                 else result = command.run(commandStr[1], judgments);
                 writer.println(result);
+
                 logWriter.print("command> " + commandStr[0]);
                 if (commandStr.length > 1) logWriter.print(" " + commandStr[1]);
                 logWriter.println();

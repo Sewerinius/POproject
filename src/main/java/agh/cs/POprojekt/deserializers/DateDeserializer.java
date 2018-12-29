@@ -12,7 +12,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class DateDeserializer implements JsonDeserializer<Date> {
-    DateFormat df = new SimpleDateFormat("yyyy-mm-dd");
+    DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
     public Date deserialize(JsonElement jsonElement, Type type, JsonDeserializationContext jsonDeserializationContext) throws JsonParseException {
         try {
             Date date = df.parse(jsonElement.getAsString());
