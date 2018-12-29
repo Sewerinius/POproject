@@ -1,0 +1,22 @@
+command> help
+rubrum			wyświetlenie metryki jednego lub wielu orzeczeń, na podstawie sygnatury
+content			wyświetlenie uzasadnienia (czyli treści pola textContent lub treść od słowa "UZASADNIENIE")
+judge			wyświetla liczbę orzeczeń dla wybranego sędziego
+judges			wyświetla 10 sędziów, którzy wydali najwięcej orzeczeń
+months			wyświetlał liczbę orzeczeń w poszczególnych miesiącach (rozkład statystyczny)
+courts			wyświetlał liczbę orzeczeń ze względu na typ sądu (rozkład statystyczny)
+regulations		wyświetlał 10 najczęściej przywoływanych ustaw
+jury			wyświetlał liczbę spraw przypadających na określony skład sędziowski (określoną liczbę sędziów)
+
+command> jury
+0: 96
+1: 757
+2: 12
+3: 1102
+4: 19
+5: 8
+6: 2
+7: 2
+13: 1
+15: 1
+
